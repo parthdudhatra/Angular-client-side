@@ -1,0 +1,68 @@
+{
+  "posts": [
+    {
+      "id": 3,
+      "firstName": "Ashish",
+      "lastName": "Gadhviw",
+      "email": "Gadhvi123@gamil.com",
+      "mobile": "12355666",
+      "salary": "50000"
+    },
+    {
+      "id": 4,
+      "firstName": "dhrvu",
+      "lastName": "dhao",
+      "email": "aoefkn123.com",
+      "mobile": "12456966",
+      "salary": "52000"
+    },
+    {
+      "id": 5,
+      "firstName": "nikhuj",
+      "lastName": "gadhavi",
+      "email": "nikhuj123@gmail.com",
+      "mobile": "152686562456",
+      "salary": "123000"
+    }
+  ],
+  "signupUsers": [
+    {
+      "fullname": "parth dudhatra",
+      "email": "parthdudhatra52@gmail.com",
+      "mobile": "9106706256",
+      "password": "parth@611",
+      "id": 1
+    },
+    {
+      "fullname": "Ashish Gadhvi",
+      "email": "ashishgadhvi12@gmail.com",
+      "mobile": "9103456892",
+      "password": "parth@611",
+      "id": 2
+    },
+    {
+      "fullname": "",
+      "email": "",
+      "mobile": "",
+      "password": "",
+      "id": 3
+    },
+    {
+      "fullname": "Geetaben Dudhatra",
+      "email": "geetadudhatra123@gmail.com",
+      "mobile": "9656256325",
+      "password": "geeta@123",
+      "id": 4
+    },
+    {
+      "fullname": "nikhij dudhatra",
+      "email": "ashishgadhvi22@gmail.com",
+      "mobile": "12346789",
+      "password": "parth@611",
+      "id": 5
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
