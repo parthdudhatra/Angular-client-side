@@ -5,3 +5,9 @@
 .table{
     border: 2rem;
 }
+.pagestyle{
+    justify-content: end;
+    align-items: flex-end;
+    color: blue;
+    margin-left: 1200px;
+}

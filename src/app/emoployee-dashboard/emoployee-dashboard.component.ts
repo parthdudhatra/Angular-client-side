@@ -11,6 +11,8 @@ import { ApiService } from '../shraed/api.service'
 export class EmoployeeDashboardComponent implements OnInit {
 
   formvalve !: FormGroup;
+  totalRecords: any;
+  page  = 1;
   EmployeeData = [];
   showAdd !: boolean;
   showUpdate !: boolean;
@@ -19,7 +21,9 @@ export class EmoployeeDashboardComponent implements OnInit {
     private formBuilder: FormBuilder,
     private api: ApiService
 
-  ) { }
+  ) {
+    this.EmployeeData = new Array<any>()
+   }
 
   ngOnInit(): void {
     this.formvalve = this.formBuilder.group({
@@ -61,7 +65,9 @@ export class EmoployeeDashboardComponent implements OnInit {
   getAllEmployee(){
     this.api.getEmploye().subscribe((res: any) => {
       this.EmployeeData = res;
-      console.log(res)
+      console.log(res);
+      this.totalRecords = res.length
+      console.log(",,,,", this.totalRecords)
     })
   }
 
