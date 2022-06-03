@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http'
+import { HttpClient, HttpHandler} from '@angular/common/http'
 import { map } from 'rxjs/operators'
 import { Observable } from 'rxjs';
 import { EmployeeModel } from '../emoployee-dashboard/employee-dashborad.model';
@@ -45,5 +45,18 @@ export class ApiService {
       .pipe(map((res: any) => {
         return res;
       }))
+  }
+
+  signup(data) : Observable<any>{
+    return this.http.post('http://localhost:8080/auth/signup', data)
+  }
+  login(data) : Observable<any>{
+    return this.http.post('http://localhost:8080/auth/login', data)
+  }
+  getProfile(data) : Observable<any>{
+    let header = {
+      'Authorization' : "Bearer" + localStorage.getItem('token')
+    }
+    return this.http.get('http://localhost:8080/auth/profile', { headers :header})
   }
 }
