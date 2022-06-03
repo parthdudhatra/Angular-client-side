@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder , Validators} from '@angular/forms'
 import { Router } from '@angular/router';
+import { ApiService } from '../shraed/api.service';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,11 @@ export class LoginComponent implements OnInit {
 
 
   public loginForm !: FormGroup
-  constructor(private formBuilder : FormBuilder, private http : HttpClient, private router : Router) { }
+  constructor(
+    private formBuilder : FormBuilder,
+     private http : HttpClient,
+     private router : Router,
+     private api : ApiService ) { }
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
@@ -21,20 +26,27 @@ export class LoginComponent implements OnInit {
     })
   }
   login(){
-    this.http.get<any>("http://localhost:3000/signupUsers")
-    .subscribe((res) => {
-      const user = res.find((a : any) => {
-        return a.email === this.loginForm.value.email && a.password === this.loginForm.value.password
+    const data = this.loginForm.value
+    this.api.login(data)
+      .subscribe((res) => {
+        alert("Login success")
       })
-      if(user){
-        alert("Login Success");
-        this.loginForm.reset();
-        this.router.navigate(['dashborad'])
-      }
-      else{
-        alert("User Not Found")
-      }
-    })
+      this.loginForm.reset();
+      this.router.navigate(['dashborad'])
+    // this.http.get<any>("http://localhost:3000/signupUsers")
+    // .subscribe((res) => {
+    //   const user = res.find((a : any) => {
+    //     return a.email === this.loginForm.value.email && a.password === this.loginForm.value.password
+    //   })
+    //   if(user){
+    //     alert("Login Success");
+    //     this.loginForm.reset();
+    //     this.router.navigate(['dashborad'])
+    //   }
+    //   else{
+    //     alert("User Not Found")
+    //   }
+    // })
   }
 
 }
