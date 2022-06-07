@@ -29,10 +29,14 @@ export class LoginComponent implements OnInit {
     const data = this.loginForm.value
     this.api.login(data)
       .subscribe((res) => {
-        alert("Login success")
+        if(res.Success){
+          alert(res.message)
+        }else {
+          alert(res.message)
+        }
       })
       this.loginForm.reset();
-      this.router.navigate(['dashborad'])
+      this.router.navigate(['add-employee'])
     // this.http.get<any>("http://localhost:3000/signupUsers")
     // .subscribe((res) => {
     //   const user = res.find((a : any) => {

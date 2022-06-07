@@ -1,14 +1,19 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { EmoployeeDashboardComponent } from './emoployee-dashboard/emoployee-dashboard.component';
 import { LoginComponent } from './login/login.component';
 import { SingupComponent } from './singup/singup.component';
+import { EmoloyeeListComponent} from './component/emoloyee-list/emoloyee-list.component';
+import {AddEmployeeComponent } from './component/add-employee/add-employee.component'
+import { EmployeeDetailComponent } from './component/employee-detail/employee-detail.component';
 
 const routes: Routes = [
-  {path:'', redirectTo : "login", pathMatch:"full"},
+  {path:'', redirectTo : "add-employee", pathMatch:"full"},
   {path :'login' , component : LoginComponent},
   { path : 'signup' , component: SingupComponent},
-  { path: 'dashborad', component: EmoployeeDashboardComponent}
+  // { path: 'dashborad', component: EmoployeeDashboardComponent},
+  { path :'employee-list', component : EmoloyeeListComponent},
+  { path :'add-employee', component : AddEmployeeComponent},
+  { path : 'edit-Employee/:id', component: EmployeeDetailComponent}
 
 ];
 
