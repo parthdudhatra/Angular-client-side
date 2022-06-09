@@ -10,3 +10,56 @@
   color: blue;
   margin-left: 1200px;
 }
+
+.main{
+  width:100%;
+  background:linear-gradient(to top,rgba(0,0,0,0.5)50%,rgba(0,0,0,0.5)50%);
+  background-position:center;
+  background-size:cover;
+  height:70px;
+}
+.navbar{
+  width:600px;
+  height:75px;
+  margin:auto;
+}
+.icon{
+  width:200px;
+  float:left;
+  height:70px;
+}
+.logo{
+  position: absolute;
+  top: 8px;
+  left: 16px;
+  font-size: 18px;
+}
+.menu{
+  width:400px;
+  float:left;
+  height:70px;
+}
+ul{
+  float:left;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+ul li{
+  list-style:none;
+  margin-left:62px;
+  margin-top:27px;
+  font-size:14px;
+}
+li a{
+  text-decoration: none;
+  color:black;
+  font-family:arial;
+  font-weight:bold;
+  transition: 0.4s ease-in-out;
+}
+ul li a:hover{
+  color:orange;
+}
+
+

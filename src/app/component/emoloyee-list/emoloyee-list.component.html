@@ -2,13 +2,58 @@
   <div class="container-fluid">
       <h1 style="color:aliceblue">Angular CRUD</h1>
       <div class="d-flex">
-          <button type="button" (click)="clickAddEmpoye()" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Employee</button>
+          <button type="button" (click)="clickAddEmpoye()" routerLink="/add-employee" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Employee</button>
           <button routerLink="/login" class="btn btn-danger mx-3">LogOut</button>
       </div>
   </div>
 </nav>
 <!-- table -->
-<table class="table mt-3">
+<div class="container">
+  <h2 class="h2">All Employees List</h2>
+
+  <nav class="navbar">
+  </nav>
+  <table class="table table-bordered">
+      <thead>
+          <tr>
+              <th class="text-center"><span class="mr-3 d-inline-block">Employee id</span>
+              </th>
+              <th class="text-center"><span class="mr-3 d-inline-block">First Name</span>
+              </th>
+              <th class="text-center"><span class="mr-3 d-inline-block">Last Name</span>
+              </th>
+              <th class="text-center"><span class="mr-3 d-inline-block">Email</span>
+              </th>
+              <th class="text-center"><span class="mr-3 d-inline-block">Salary</span>
+              </th>
+              <th class="text-center"><span class="mr-3 d-inline-block">Action</span> </th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr tr *ngFor="let a of EmployeeData | paginate :{ id : 'listing_pagination',
+          itemsPerPage : 5,
+          currentPage : page,
+          totalItems : totalRecords
+        } ; let i = index">
+              <td scope="row" class="text-center">{{a._id}}</td>
+              <td>{{a.firstName}}</td>
+              <td>{{a.lastName}}</td>
+              <td>{{a.email}}</td>
+              <td>{{a.salary}}</td>
+              <td>
+                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal" [routerLink]="['/edit-employee',a._id]" class="btn btn-info">Edit</button>
+                <button  (click)="delete(a._id,i)" class="btn btn-danger mx-3">Delete</button>
+              </td>
+          </tr>
+      </tbody>
+      <!-- <pagination-controls (pageChange)="p = $event"></pagination-controls> -->
+  </table>
+  <div class="pagestyle">
+    <pagination-controls id="listing_pagination" [maxSize]="5" [directionLinks]="true" (pageChange)="page = $event"></pagination-controls>
+  </div>
+
+
+<!-- <table class="table mt-3">
   <thead>
       <tr>
           <th scope="col">Employee ID</th>
@@ -33,7 +78,7 @@
           <td>{{a.mobile}}</td>
           <td>{{a.salary}}</td>
           <td>
-              <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal" [routerLink]="['/edit-Employee',EmployeeData.id]" class="btn btn-info">Edit</button>
+              <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal" [routerLink]="['/edit-employee',a._id]" class="btn btn-info">Edit</button>
               <button  (click)="delete(a._id,i)" class="btn btn-danger mx-3">Delete</button>
           </td>
       </tr>
@@ -41,4 +86,4 @@
 </table>
 <div class="pagestyle">
   <pagination-controls id="listing_pagination" [maxSize]="5" [directionLinks]="true" (pageChange)="page = $event"></pagination-controls>
-</div>
+</div> -->

@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'AngularCURD';
+  // showAddEmployee : true;
+  showUpdate !: boolean;
+  clickAddEmpoye(){
+    // this.formvalve.reset();
+    // this.showAddEmployee = false;
+    // this.showUpdate = false
+  }
 }

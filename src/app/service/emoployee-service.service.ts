@@ -1,7 +1,7 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, map, Observable, throwError } from 'rxjs';
-import { Emoployee } from './emoployee'
+import { Employee } from './emoployee'
 @Injectable({
   providedIn: 'root'
 })
@@ -14,7 +14,7 @@ export class EmoployeeServiceService {
   constructor(private httpClient : HttpClient) { }
 
   //add Employee
-  AddEmployee(data : Emoployee): Observable<any>{
+  AddEmployee(data : Employee): Observable<any>{
     let APT_URL =  `${this.REST_API}/add-employee`;
     return this.httpClient.post(APT_URL,data).pipe(catchError(this.handleError))
   }
@@ -25,19 +25,20 @@ export class EmoployeeServiceService {
   }
 
   //get Single Employee
-  getEmployee(id : any) : Observable<any>{
-    let APT_URL = `${this.REST_API}/read-employee/${id}`;
-    return this.httpClient.get(APT_URL, { headers : this.httpHeaders}).pipe(map((res : any)=> {
-      return res || {}
+  getEmployee(id:any):Observable<any>{
+    let API_URL=`${this.REST_API}/${id}`;
+    return this.httpClient.get(API_URL,{headers:this.httpHeaders}).pipe(map((res:any)=>{
+      return res||{}
     }),
-    catchError(this.handleError))
+    catchError(this.handleError)
+    )
   }
 
-  // update the employee
-  updateEmployee(id : any , data : any) : Observable<any>{
-    let APT_URL = `${this.REST_API}/update-employee/${id}`;
-    return this.httpClient.put(APT_URL,data, { headers : this.httpHeaders}).pipe(
-    catchError(this.handleError))
+  updateEmployee(id:any,data:any):Observable<any>{
+    let API_URL=`${this.REST_API}/${id}`;
+    return this.httpClient.put(API_URL,data,{headers:this.httpHeaders}).pipe(
+      catchError(this.handleError)
+    )
   }
 
   deleteEmployee(id : any):Observable<any>{

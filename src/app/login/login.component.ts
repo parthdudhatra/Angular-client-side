@@ -31,12 +31,13 @@ export class LoginComponent implements OnInit {
       .subscribe((res) => {
         if(res.Success){
           alert(res.message)
+          this.loginForm.reset();
+        this.router.navigate(['employee-list'])
         }else {
           alert(res.message)
         }
       })
-      this.loginForm.reset();
-      this.router.navigate(['add-employee'])
+
     // this.http.get<any>("http://localhost:3000/signupUsers")
     // .subscribe((res) => {
     //   const user = res.find((a : any) => {

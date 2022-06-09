@@ -1,8 +1,8 @@
-export class Emoployee {
-    _id : string;
-    firstName : string;
-    lastName :string;
-    email : string;
-    mobile : string;
-    salary : string;
+export class Employee {
+  _id!:String;
+  firstName!:String;
+  lastName!:String;
+  email!:String;
+  mobile!: String
+  salary!:String;
 }

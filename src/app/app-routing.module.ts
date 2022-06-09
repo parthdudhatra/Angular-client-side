@@ -6,14 +6,16 @@ import { EmoloyeeListComponent} from './component/emoloyee-list/emoloyee-list.co
 import {AddEmployeeComponent } from './component/add-employee/add-employee.component'
 import { EmployeeDetailComponent } from './component/employee-detail/employee-detail.component';
 
+
+
 const routes: Routes = [
-  {path:'', redirectTo : "add-employee", pathMatch:"full"},
+  {path:'', redirectTo : "login", pathMatch:"full"},
   {path :'login' , component : LoginComponent},
   { path : 'signup' , component: SingupComponent},
   // { path: 'dashborad', component: EmoployeeDashboardComponent},
   { path :'employee-list', component : EmoloyeeListComponent},
   { path :'add-employee', component : AddEmployeeComponent},
-  { path : 'edit-Employee/:id', component: EmployeeDetailComponent}
+  { path : 'edit-employee/:id', component: EmployeeDetailComponent}
 
 ];
 
