@@ -10,16 +10,11 @@
   </div>
 </nav>
 <!-- table -->
-<!-- <div class="container">
-  <h2 class="h2">All Employees List</h2>
-
-  <nav class="navbar">
-  </nav>
+<div class="container">
+  <h2 class="h3 mt-5 text-center">ALL EMPLOYEES LIST</h2>
   <table class="table table-bordered">
       <thead>
           <tr>
-              <th class="text-center"><span class="mr-3 d-inline-block">Employee id</span>
-              </th>
               <th class="text-center"><span class="mr-3 d-inline-block">First Name</span>
               </th>
               <th class="text-center"><span class="mr-3 d-inline-block">Last Name</span>
@@ -32,12 +27,11 @@
           </tr>
       </thead>
       <tbody>
-          <tr tr *ngFor="let a of EmployeeData | paginate :{ id : 'listing_pagination',
+          <tr *ngFor="let a of EmployeeData | paginate :{ id : 'listing_pagination',
           itemsPerPage : 5,
           currentPage : page,
           totalItems : totalRecords
         } ; let i = index">
-              <td scope="row" class="text-center">{{a._id}}</td>
               <td scope="row" class="text-center">{{a.firstName}}</td>
               <td scope="row" class="text-center">{{a.lastName}}</td>
               <td scope="row" class="text-center">{{a.email}}</td>
@@ -52,19 +46,17 @@
 
   <div class="modal-footer">
     <pagination-controls id="listing_pagination" [maxSize]="5" [directionLinks]="true" (pageChange)="page = $event"></pagination-controls>
-  </div> -->
-
-
-<table class="table table-bordered">
+  </div>
+<!-- <table class="table table-bordered">
   <thead>
       <tr>
-          <th class="text-center"><span class="mr-3 d-inline-block">Employee id</span></th>
-          <th class="text-center"><span class="mr-3 d-inline-block">First Name</span></th>
-          <th class="text-center"><span class="mr-3 d-inline-block">Last Name</span></th>
-          <th class="text-center"><span class="mr-3 d-inline-block">Email</span></th>
-          <th class="text-center"><span class="mr-3 d-inline-block">Mobile</span></th>
-          <th class="text-center"><span class="mr-3 d-inline-block">Salary</span></th>
-          <th class="text-center"><span class="mr-3 d-inline-block">Action</span></th>
+          <th class="text-center"><span class="mr-2">Employee id</span></th>
+          <th class="text-center"><span class="mr-2">First Name</span></th>
+          <th class="text-center"><span class="mr-2">Last Name</span></th>
+          <th class="text-center"><span class="mr-2">Email</span></th>
+          <th class="text-center"><span class="mr-2">Mobile</span></th>
+          <th class="text-center"><span class="mr-2">Salary</span></th>
+          <th class="text-center"><span class="mr-2">Action</span></th>
       </tr>
   </thead>
   <tbody>
@@ -88,4 +80,4 @@
 </table>
 <div class="pagestyle">
   <pagination-controls id="listing_pagination" [maxSize]="5" [directionLinks]="true" (pageChange)="page = $event"></pagination-controls>
-</div>
+</div> -->

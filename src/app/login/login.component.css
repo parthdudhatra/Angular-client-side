@@ -1,21 +1,24 @@
 
 .card {
-    border: none;
+    border: 2px solid black;
     width : 500px;
-    padding: 40px;
+    padding: 30px;
     position: absolute;
-    top : 50%;
+    top : 55%;
     left : 50%;
     transform: translate(-50%, -50%);
-    background: hsla(205, 46%,30%,1);
-    background: linear-gradient(90deg, hsla(205, 46%,30%,1) 0%, hsla(260, 29%,36%,1));
+}
+.navbar {
+  background: hsla(205, 46%,30%,1);
+  background: linear-gradient(90deg, hsla(205, 46%,30%,1) 0%, hsla(260, 29%,36%,1))
 }
 
-.card h1,
+.card h2,
 h6{
-    color: white;
+    color: black;
+    margin: 30px;
 }
 
 label {
-    color: white;
+    color: black;
 }

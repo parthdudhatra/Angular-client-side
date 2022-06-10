@@ -2,7 +2,9 @@
   background-color: aquamarine;
 }
 .table{
-  border: 2rem;
+  border: 1rem;
+  margin: 20px;
+  padding: 10px;
 }
 .pagestyle{
   justify-content: end;
@@ -10,4 +12,10 @@
   color: blue;
   margin-left: 1200px;
 }
+
+.navbar {
+  background: hsla(205, 46%,30%,1);
+  background: linear-gradient(90deg, hsla(205, 46%,30%,1) 0%, hsla(260, 29%,36%,1))
+}
+
 
