@@ -1,9 +1,19 @@
+<nav class="navbar">
+  <div class="container-fluid">
+      <h1 style="color:aliceblue">ASPIRE</h1>
+      <div class="d-flex">
+          <button class="btn btn-secondary mx-3" routerLink="/signup">SignUp</button>
+          <button class="btn btn-secondary mx-3" routerLink="/login">Login</button>
+      </div>
+  </div>
+</nav>
+
 <div class="container">
     <div class="row">
         <div class="col-md-6">
-            <div class="card">
+            <div class="card border">
                 <div class="text-center">
-                    <h1>Sign Up</h1>
+                    <h2>Sign Up</h2>
                     <h6>Register yourself!</h6>
                 </div>
                 <form>
@@ -31,7 +41,7 @@
                         </div>
                         <button type="submit" [disabled]="!signupForm.valid" class="btn btn-primary mb-3">Sign Up</button>
                       </form>
-                      <a style="color: white; margin-top: 10px;" routerLink="/login">Aready Regisiter? click to login!!</a>
+                      <a style="color: black; margin-top: 10px;" routerLink="/login">Aready Regisiter? click to login!!</a>
 
                 </form>
             </div>
