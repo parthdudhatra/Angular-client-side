@@ -1,0 +1,8 @@
+<tr *ngFor="let a of EmployeeData  let i = index">
+  <td scope="row" class="text-center">
+    <button (click)="delete(a._id,i)" class="btn btn-danger mx-3">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </td>
+</tr>
+<button>Delete</button>

@@ -34,7 +34,7 @@ export class EmoployeeServiceService {
     )
   }
 
-  updateEmployee(id:any,data:any):Observable<any>{
+  updateEmployee(data:any,id:any):Observable<any>{
     let API_URL=`${this.REST_API}/${id}`;
     return this.httpClient.put(API_URL,data,{headers:this.httpHeaders}).pipe(
       catchError(this.handleError)

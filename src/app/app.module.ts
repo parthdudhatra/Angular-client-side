@@ -13,6 +13,12 @@ import { LoginComponent } from './login/login.component';
 import { AddEmployeeComponent } from './component/add-employee/add-employee.component';
 import { EmployeeDetailComponent } from './component/employee-detail/employee-detail.component';
 import { EmoloyeeListComponent } from './component/emoloyee-list/emoloyee-list.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatIconModule} from '@angular/material/icon';
+import { DeleteEmoloyeeComponent } from './component/delete-emoloyee/delete-emoloyee.component';
+import { ViewEmployeeComponent } from './component/view-employee/view-employee.component';
+
+
 
 @NgModule({
   declarations: [
@@ -22,7 +28,9 @@ import { EmoloyeeListComponent } from './component/emoloyee-list/emoloyee-list.c
     LoginComponent,
     AddEmployeeComponent,
     EmployeeDetailComponent,
-    EmoloyeeListComponent
+    EmoloyeeListComponent,
+    DeleteEmoloyeeComponent,
+    ViewEmployeeComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +38,9 @@ import { EmoloyeeListComponent } from './component/emoloyee-list/emoloyee-list.c
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    BrowserAnimationsModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
