@@ -5,7 +5,6 @@ import { SingupComponent } from './singup/singup.component';
 import { EmoloyeeListComponent} from './component/emoloyee-list/emoloyee-list.component';
 import {AddEmployeeComponent } from './component/add-employee/add-employee.component'
 import { EmployeeDetailComponent } from './component/employee-detail/employee-detail.component';
-import { DeleteEmoloyeeComponent } from './component/delete-emoloyee/delete-emoloyee.component';
 import { ViewEmployeeComponent } from './component/view-employee/view-employee.component';
 
 
@@ -18,7 +17,6 @@ const routes: Routes = [
   { path :'employee-list', component : EmoloyeeListComponent},
   { path :'add-employee', component : AddEmployeeComponent},
   { path : 'edit-employee/:id', component: EmployeeDetailComponent},
-  { path : 'delete-employee', component : DeleteEmoloyeeComponent},
   { path : 'view-employee/:id' , component : ViewEmployeeComponent}
 
 ];

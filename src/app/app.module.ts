@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import {NgxPaginationModule} from 'ngx-pagination';
 
 
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 // import { EmoployeeDashboardComponent } from './emoployee-dashboard/emoployee-dashboard.component';
@@ -15,7 +16,6 @@ import { EmployeeDetailComponent } from './component/employee-detail/employee-de
 import { EmoloyeeListComponent } from './component/emoloyee-list/emoloyee-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatIconModule} from '@angular/material/icon';
-import { DeleteEmoloyeeComponent } from './component/delete-emoloyee/delete-emoloyee.component';
 import { ViewEmployeeComponent } from './component/view-employee/view-employee.component';
 
 
@@ -29,7 +29,6 @@ import { ViewEmployeeComponent } from './component/view-employee/view-employee.c
     AddEmployeeComponent,
     EmployeeDetailComponent,
     EmoloyeeListComponent,
-    DeleteEmoloyeeComponent,
     ViewEmployeeComponent
   ],
   imports: [
@@ -40,7 +39,8 @@ import { ViewEmployeeComponent } from './component/view-employee/view-employee.c
     HttpClientModule,
     NgxPaginationModule,
     BrowserAnimationsModule,
-    MatIconModule
+    MatIconModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]

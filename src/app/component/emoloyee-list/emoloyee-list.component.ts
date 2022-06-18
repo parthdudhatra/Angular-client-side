@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Employee } from '../../service/emoployee'
 import { EmoployeeServiceService } from 'src/app/service/emoployee-service.service';
+import { MatTableDataSource } from '@angular/material/table';
+
+
 @Component({
   selector: 'app-emoloyee-list',
   templateUrl: './emoloyee-list.component.html',
@@ -8,13 +11,14 @@ import { EmoployeeServiceService } from 'src/app/service/emoployee-service.servi
 })
 export class EmoloyeeListComponent implements OnInit {
   totalRecords: any;
-  page  = 1;
-  EmployeeData : any = []
+  page = 1;
+  EmployeeData: any = [];
+  dataSource!:MatTableDataSource<any>
 
   // formvalve !: FormGroup;
   showAdd !: boolean;
   showUpdate !: boolean;
-  constructor(private api :EmoployeeServiceService) { }
+  constructor(private api: EmoployeeServiceService) { }
 
   ngOnInit(): void {
     this.api.getEmployees().subscribe(res => {
@@ -23,17 +27,18 @@ export class EmoloyeeListComponent implements OnInit {
     })
   }
 
-  delete(id : any, i : any) {
+  delete(id: any, i: any) {
     console.log(id);
-    if(window.confirm("Are you sure want to delete")){
+    if (window.confirm("Are you sure want to delete")) {
       this.api.deleteEmployee(id).subscribe(res => {
-        this.EmployeeData.splice(i , 1)
+        this.EmployeeData.splice(i, 1)
       })
     }
   }
-  clickAddEmpoye(){
+  clickAddEmpoye() {
     // this.formvalve.reset();
     this.showAdd = true;
     this.showUpdate = false
   }
+
 }
